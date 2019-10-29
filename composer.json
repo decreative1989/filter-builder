@@ -1,0 +1,61 @@
+{
+  "name": "sansan/filter-builder",
+  "description": "Filter Builder for Laravel Model",
+  "keywords": [
+    "filter-builder",
+    "laravel"
+  ],
+  "homepage": "https://github.com/decreative1989/filter-builder",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "SanSan a.k Ade Sanusi",
+      "email": "sansan.adesanusi@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php" : "~5.6|~7.0",
+    "illuminate/support": "5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|6.0.*"
+
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.5.*|7.0.*",
+    "laravel/framework": "5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|6.0.*",
+    "squizlabs/php_codesniffer": "^2.3",
+    "codedungeon/phpunit-result-printer": "^0.26.2",
+    "spatie/phpunit-watcher": "^1.12",
+    "fzaninotto/faker": "^1.8",
+    "orchestra/testbench": "^4.1",
+    "mockery/mockery": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "SanSan\\FilterBuilder\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SanSan\\FilterBuilder\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "watch": "vendor/bin/phpunit-watcher",
+    "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+    "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SanSan\\FilterBuilder\\Providers\\LaravelServiceProvider"
+      ],
+      "aliases": {
+        "FilterBuilder": "SanSan\\FilterBuilder\\Facades\\FilterBuilder"
+      }
+    }
+  }
+}
